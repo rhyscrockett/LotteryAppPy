@@ -1,4 +1,4 @@
-from lotterygeneration import randomticket # needed for the random generator
+from lotterygenerator import randomticket  # needed for the random generator
 from lotteryreader import winningnumbers   # needed for the csv reader
 from timer import Timer                    # needed for timing functions
 
