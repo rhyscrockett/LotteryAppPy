@@ -7,4 +7,5 @@ def randomticket():
         ticket.add(random.randint(1,50))       # add a random number between 1 and 50
                                                # to the ticket
     print('Your Ticket Numbers: ')             # print the ticket
-    print(ticket)
+    #print(ticket)
+    return ticket
