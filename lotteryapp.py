@@ -1,6 +1,7 @@
-from lotterygenerator import randomticket  # needed for the random generator
-from lotteryreader import winningnumbers   # needed for the csv reader
-from timer import Timer                    # needed for timing functions
+from lotterygenerator import randomticket     # needed for the random generator
+from lotteryreader import winningnumbers      # needed for the csv reader
+from lotterychecker import findwinningnumbers # needed for the checker function
+from timer import Timer                       # needed for timing functions
 
 # Start timer and call the random function
 gentime = Timer()
@@ -18,6 +19,12 @@ dataset01 = winningnumbers("Lottery-numbers-csv/lotto-results-2001.csv")
 readtime.stop()
 
 print(myticket)
-compare = [tuple(i) for i in dataset01] # tuple: ordered list immutable
-#compare = [set(i) for i in dataset01)] # set: unordered set unique
+#compare = [tuple(i) for i in dataset01] # tuple: ordered list immutable
+compare = [set(i) for i in dataset01] # set: unordered set unique
 print(compare)
+
+# quick function to cycle through items in the compare dataset (will return a list of class: set)
+ls = [type(item) for item in compare]
+#print(ls)
+
+print(findwinningnumbers(myticket, dataset01))  # print using function the winning nos from ticket and dataset
