@@ -21,7 +21,7 @@ readtime.stop()
 print(myticket)
 #compare = [tuple(i) for i in dataset01] # tuple: ordered list immutable
 compare = [set(i) for i in dataset01] # set: unordered set unique
-print(compare)
+#print(compare) # print the new set list
 
 # quick function to cycle through items in the compare dataset (will return a list of class: set)
 ls = [type(item) for item in compare]
