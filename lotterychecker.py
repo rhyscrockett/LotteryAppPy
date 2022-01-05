@@ -11,16 +11,35 @@ def findwinningnumbers(genticket, dataset):
                 print(f"Matching number found: {item}") # print the count of matching numbers
             else:
                 continue                                # if the number is not found, continue to the next number
-
+            
         if matchingnumbers:                             # if there is matching numbers in matchingnumbers
             count = len(matchingnumbers)                # use the length of matchingnumbers list to store the count
-            print(f"(Counter: {count})")                # print the count for that ticket
-            totalmatchingnumbers.append(matchingnumbers)# add the numbers found for that ticket to another list
+            print(f"\t(Counter: {count})\n")            # print the count for that ticket
+            totalmatchingnumbers.append(count)          # add the numbers found for that ticket to another list
+            #totalmatchingnumbers.append(matchingnumbers)
             matchingnumbers.clear()                     # clear the matchingnumbers list for the next ticket
-            print("\n")                                 # new line
         else:                                           # if no matchingnumbers are found in list
             print("No Matching Numbers.\n")             # print statement
             continue                                    # continue to next ticket
         
+    
+    print("-----------------------------------")
+    no1 = totalmatchingnumbers.count(1)
+    print(f"Tickets with 1 matching numbers: {no1}")
+    no2 = totalmatchingnumbers.count(2)
+    print(f"Tickets with 2 matching numbers: {no2}")
+    no3 = totalmatchingnumbers.count(3)
+    print(f"Tickets with 3 matching numbers: {no3}")
+    no4 = totalmatchingnumbers.count(4)
+    print(f"Tickets with 4 matching numbers: {no4}")
+    no5 = totalmatchingnumbers.count(5)
+    print(f"Tickets with 5 matching numbers: {no5}")
+    no6 = totalmatchingnumbers.count(6)
+    print(f"Tickets with 6 matching numbers: {no6}")
+    no7 = totalmatchingnumbers.count(7)
+    print(f"Tickets with 7 matching numbers: {no7}")
+    print("-----------------------------------")
+    
     print("\nTotal Matching Numbers: ")                 # print statement
     return len(totalmatchingnumbers)                    # return the length (numbers of) the total dataset
+    

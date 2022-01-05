@@ -14,8 +14,8 @@ readtime = Timer()
 readtime.start()
 # these datasets are lists
 dataset01 = winningnumbers("Lottery-numbers-csv/lotto-results-2001.csv")
-dataset02 = winningnumbers("Lottery-numbers-csv/lotto-results-2002.csv")
-dataset03 = winningnumbers("Lottery-numbers-csv/lotto-results-2003.csv")
+#dataset02 = winningnumbers("Lottery-numbers-csv/lotto-results-2002.csv")
+#dataset03 = winningnumbers("Lottery-numbers-csv/lotto-results-2003.csv")
 readtime.stop()
 
 print(myticket)
