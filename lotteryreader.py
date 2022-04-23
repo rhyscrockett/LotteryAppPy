@@ -1,8 +1,7 @@
 import csv
 
-dataset = []
-
 def winningnumbers(filename):
+    dataset = []
     with open(filename) as csv_file:                                      # open the csv file parameter using an alias csv_file
         csv_reader = csv.reader(csv_file, delimiter=",")                  # create a csv_reader using the file and a delimiter
         line_count = 0                                                    # line counter set to 0
