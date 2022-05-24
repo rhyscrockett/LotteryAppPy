@@ -1,6 +1,6 @@
 import csv
 
-def winningnumbers(filename):
+def winning_numbers(filename):
     dataset = []
     with open(filename) as csv_file:                                      # open the csv file parameter using an alias csv_file
         csv_reader = csv.reader(csv_file, delimiter=",")                  # create a csv_reader using the file and a delimiter

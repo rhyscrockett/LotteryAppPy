@@ -1,6 +1,6 @@
 import random                                  # needed for the random functions
 
-def randomticket():
+def random_ticket():
     ticket = set()                             # create an empty set 'ticket'
 
     for x in range(7):                         # loop through 7 times

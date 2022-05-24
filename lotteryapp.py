@@ -1,5 +1,5 @@
-from lotterygenerator import randomticket     # needed for the random generator
-from lotteryreader import winningnumbers      # needed for the csv reader
+from lotterygenerator import random_ticket     # needed for the random generator
+from lotteryreader import winning_numbers      # needed for the csv reader
 from lotterychecker import find_winning_numbers # needed for the checker function
 from timer import Timer                       # needed for timing functions
 import os
