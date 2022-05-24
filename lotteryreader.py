@@ -20,7 +20,6 @@ def winning_numbers(filename):
 
         csv_file.close()                                                  # close the csv reader
 
-        numbers = [dataset[i:i+7] for i in range(0, len(dataset), 7)]     # slice magic to carve up the huge dataset of all winning numbers into each winning ticket
-        #print(f"Processed {line_count}")                                  # final print statment displaying how many lines have been counted. Error checking.
+        ticket = [dataset[i:i+7] for i in range(0, len(dataset), 7)]     # slice magic to carve up the huge dataset of all winning numbers into each winning ticket
 
-    return numbers
+    return ticket
