@@ -18,15 +18,20 @@ def find_winning_numbers(genticket, dataset):
             # totalmatchingnumbers returns matching numbers for each ticket
             matchingnumbers.clear()                      # clear the matchingnumbers list for the next ticket
 
-    total = len(totalmatchingnumbers)
+    return totalmatchingnumbers
+
+def save_winning_numbers(matchingnumbers, ticket):
+    total = len(matchingnumbers)
+    ticket = str(ticket)
     with open("results.txt", "a") as f:
-        f.write("\n-----------------------------------")
-        f.write(f"\n1 matching number: {totalmatchingnumbers.count(1)}")
-        f.write(f"\n2 matching numbers: {totalmatchingnumbers.count(2)}")
-        f.write(f"\n3 matching numbers: {totalmatchingnumbers.count(3)}")
-        f.write(f"\n4 matching numbers: {totalmatchingnumbers.count(4)}")
-        f.write(f"\n5 matching numbers: {totalmatchingnumbers.count(5)}")
-        f.write(f"\n6 matching numbers: {totalmatchingnumbers.count(6)}")
-        f.write(f"\n7 matching numbers: {totalmatchingnumbers.count(7)}")
+        f.write("-----------------------------------")
+        f.write(f"\nTicket: {ticket}")
+        f.write(f"\n1 matching number: {matchingnumbers.count(1)}")
+        f.write(f"\n2 matching numbers: {matchingnumbers.count(2)}")
+        f.write(f"\n3 matching numbers: {matchingnumbers.count(3)}")
+        f.write(f"\n4 matching numbers: {matchingnumbers.count(4)}")
+        f.write(f"\n5 matching numbers: {matchingnumbers.count(5)}")
+        f.write(f"\n6 matching numbers: {matchingnumbers.count(6)}")
+        f.write(f"\n7 matching numbers: {matchingnumbers.count(7)}")
         f.write(f"\nTotal matching Numbers from Dataset: {total}")
-        f.write("\n-----------------------------------")
+        f.write("\n-----------------------------------\n\n")

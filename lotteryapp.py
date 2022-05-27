@@ -1,7 +1,7 @@
-from lotterygenerator import random_ticket     # needed for the random generator
-from lotteryreader import winning_numbers      # needed for the csv reader
-from lotterychecker import find_winning_numbers # needed for the checker function
-from timer import Timer                       # needed for timing functions
+from lotterygenerator import random_ticket                            # needed for the random generator
+from lotteryreader import winning_numbers                             # needed for the csv reader
+from lotterychecker import find_winning_numbers, save_winning_numbers # needed for the checker function
+from timer import Timer                                               # needed for timing functions
 import os
 
 def clean_results():
@@ -24,8 +24,9 @@ def main():
         if filename.endswith(".csv"):
             # parse CSV file and return 
             dataset = winning_numbers("Lottery-numbers-csv/" + filename)
-            find_winning_numbers(myticket, dataset) # this should return totalmatchingnumbers to be used by the write to file function
-            ### have the write to file function here (timer either side)
+            fetch = find_winning_numbers(myticket, dataset) # this returns totalmatchingnumbers
+            save_winning_numbers(fetch, myticket) # save the contents of find_winning_numbers to results.txt
+            # (timer either side)
         readtime.stop()
 
 if __name__ == '__main__':
