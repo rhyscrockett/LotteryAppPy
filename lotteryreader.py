@@ -1,6 +1,7 @@
 import csv
 
 def winning_numbers(filename):
+    """Read the CSV file and only accept the winning number values. Slice all values into individual tickets to be used in comparison."""
     dataset = []
     with open(filename) as csv_file:                                      # open the csv file parameter using an alias csv_file
         csv_reader = csv.reader(csv_file, delimiter=",")                  # create a csv_reader using the file and a delimiter
@@ -16,11 +17,10 @@ def winning_numbers(filename):
                 dataset.append(row[6])
                 dataset.append(row[7])
                 dataset.append(row[8])
-                line_count += 1                                           # increment the line_counter
+                #line_count += 1                                           # increment the line_counter
 
         csv_file.close()                                                  # close the csv reader
 
         numbers = [dataset[i:i+7] for i in range(0, len(dataset), 7)]     # slice magic to carve up the huge dataset of all winning numbers into each winning ticket
-        #print(f"Processed {line_count}")                                  # final print statment displaying how many lines have been counted. Error checking.
 
     return numbers

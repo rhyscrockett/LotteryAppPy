@@ -5,31 +5,27 @@ from timer import Timer                                               # needed f
 import os
 
 def clean_results():
+    """Wipe the contents of results.txt for the program to append multiple datasets to one file during execution"""
     open("results.txt", "w").close() # wipe the contents of results txt for each program execution
 
 def main():
-    # Start timer and call the random function
-    gentime = Timer()
-    gentime.start()
-    myticket = random_ticket() # this is a set
-    gentime.stop()
-
-    print("Your ticket numbers:", myticket)
+    """Main function. Generate a random ticket, start a timer, read CSV dataset, check for winning numbers, save file, stop timer."""
+    # generate a random ticket to be used in the comparison with datasets
+    ticket = random_ticket() # this is a set
     
-    # Start another timer and call the reader function
+    # Create timer and call the reader function
     readtime = Timer()
     # main loop (for each file in dir, if filename ends with csv
     for filename in os.listdir("Lottery-numbers-csv/"):
-        readtime.start()
         if filename.endswith(".csv"):
-            # parse CSV file and return 
-            dataset = winning_numbers("Lottery-numbers-csv/" + filename)
-            fetch = find_winning_numbers(myticket, dataset) # this returns totalmatchingnumbers
-            save_winning_numbers(fetch, myticket) # save the contents of find_winning_numbers to results.txt
-            # (timer either side)
-        readtime.stop()
+            print("Reading", '"'+filename+'"')
+            readtime.start()
+            dataset = winning_numbers("Lottery-numbers-csv/" + filename) # parse file in folder using filename.csv
+            fetch = find_winning_numbers(ticket, dataset) # returns totalmatchingnumbers
+            save_winning_numbers(fetch, ticket) # save the contents of find_winning_numbers to results.txt
+            readtime.stop()
 
 if __name__ == '__main__':
     clean_results() # ensure results are clean before executing the code
-    main()
+    main() # main loop
     

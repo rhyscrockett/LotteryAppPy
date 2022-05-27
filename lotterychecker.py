@@ -1,4 +1,5 @@
 def find_winning_numbers(genticket, dataset):
+    """Read through dataset CSV, check each number against the randomly generated ticket, append all winning numbers to list"""
     matchingnumbers = [] # list to hold items that appear in both tickets
     totalmatchingnumbers = [] # list that holds the number of total winning numbers (i.e. any number with 1 or more matching numbers)
     for row in dataset:                                  # for each row (ticket) in the dataset
@@ -21,6 +22,7 @@ def find_winning_numbers(genticket, dataset):
     return totalmatchingnumbers
 
 def save_winning_numbers(matchingnumbers, ticket):
+    """Load all winning numbers and count occurance."""
     total = len(matchingnumbers)
     ticket = str(ticket)
     with open("results.txt", "a") as f:
