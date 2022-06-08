@@ -11,7 +11,7 @@ def find_winning_numbers(genticket, dataset):
                 #print(f"Matching number found: {item}") # print the count of matching numbers
             else:
                 continue                                 # continue to the next number in the ticket
-            
+
         for x in matchingnumbers:                        # if there is matching numbers in matchingnumbers
             count = len(matchingnumbers)                 # use the length of matchingnumbers list to store the count
             #print(f"\t(Counter: {count})\n")            # print the count for that ticket
@@ -25,7 +25,7 @@ def save_winning_numbers(matchingnumbers, ticket):
     """Load all winning numbers and count occurance."""
     total = len(matchingnumbers)
     ticket = str(ticket)
-    with open("results.txt", "a") as f:
+    with open("lotteryresults.txt", "a") as f:
         f.write("-----------------------------------")
         f.write(f"\nTicket: {ticket}")
         f.write(f"\n1 matching number: {matchingnumbers.count(1)}")

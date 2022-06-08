@@ -6,13 +6,13 @@ import os
 
 def clean_results():
     """Wipe the contents of results.txt for the program to append multiple datasets to one file during execution"""
-    open("results.txt", "w").close() # wipe the contents of results txt for each program execution
+    open("lotteryresults.txt", "w").close() # wipe the contents of results txt for each program execution
 
 def main():
     """Main function. Generate a random ticket, start a timer, read CSV dataset, check for winning numbers, save file, stop timer."""
     # generate a random ticket to be used in the comparison with datasets
     ticket = random_ticket() # this is a set
-    
+
     # Create timer and call the reader function
     readtime = Timer()
     # main loop (for each file in dir, if filename ends with csv
@@ -28,4 +28,3 @@ def main():
 if __name__ == '__main__':
     clean_results() # ensure results are clean before executing the code
     main() # main loop
-    
